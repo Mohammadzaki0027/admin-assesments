@@ -1,10 +1,10 @@
-import { Box, Grid, MenuItem, Select, Typography } from "@mui/material";
-import React, { useState } from "react";
-import Sidebar from "../components/SideBar";
+import { Box, MenuItem, Select, Typography } from "@mui/material";
+
 import Topbar from "../components/Top";
 import StatCard from "../components/StaticsCard";
 import RevenueChart from "../components/RevenueChart";
 import SalesChart from "../components/SalesChart";
+import { useState } from "react";
 const monthArray = [
   "January",
   "February",
@@ -65,36 +65,19 @@ const Dashboard = () => {
         >
           {/* Your current content */}
           <Box sx={{ position: "relative", zIndex: 1 }}>
-            <Grid container spacing={3}>
-              {/* StatCards */}
-              <Grid item xs={12} sm={6} md={3}>
-                <StatCard
-                  title="Active Users"
-                  value="40,689"
-                  change="↑ 8.5%"
-                  positive
-                />
-              </Grid>
-              <Grid item xs={12} sm={6} md={3}>
-                <StatCard
-                  title="Total Buyers"
-                  value="10,293"
-                  change="↑ 1.3%"
-                  positive
-                />
-              </Grid>
-              <Grid item xs={12} sm={6} md={3}>
-                <StatCard
-                  title="Total Sellers"
-                  value="2,040"
-                  change="↑ 1.8%"
-                  positive
-                />
-              </Grid>
-              <Grid item xs={12} sm={6} md={3}>
-                <StatCard title="Total Sales" value="$89,000" change="↓ 4.3%" />
-              </Grid>
-            </Grid>
+          <Box
+      sx={{
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'space-between',
+        gap: 2,
+      }}
+    >
+      <StatCard title="Active Users" value="40,689" change="↑ 8.5%" positive />
+      <StatCard title="Total Buyers" value="10,293" change="↑ 1.3%" positive />
+      <StatCard title="Total Sellers" value="2,040" change="↑ 1.8%" positive />
+      <StatCard title="Total Sales" value="$89,000" change="↓ 4.3%" positive={false} />
+    </Box>
 
             <Box
               sx={{
@@ -132,7 +115,7 @@ const Dashboard = () => {
                     ))}
                   </Select>
                 </Box>
-                <SalesChart month={revenueMonth} />
+                <SalesChart  />
               </Box>
 
               {/* Revenue Chart Box */}
@@ -161,7 +144,7 @@ const Dashboard = () => {
                     ))}
                   </Select>
                 </Box>
-                <RevenueChart month={revenueMonth} />
+                <RevenueChart  />
               </Box>
             </Box>
           </Box>

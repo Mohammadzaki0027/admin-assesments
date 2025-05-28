@@ -38,7 +38,7 @@ const renderLegend = (props: any) => {
   );
 };
 
-export default function RevenueChart({month}: { month: string }) {
+export default function RevenueChart() {
   return (
     <Card>
       <CardContent>

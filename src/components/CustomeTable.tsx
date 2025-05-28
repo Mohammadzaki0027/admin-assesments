@@ -1,5 +1,5 @@
 // components/CustomTable.tsx
-import React from 'react';
+
 import {
   Table,
   TableBody,
@@ -9,14 +9,13 @@ import {
   TableRow,
   Checkbox,
   Paper,
-  IconButton,
+
   Avatar,
   Typography,
   Box,
   Button
 } from '@mui/material';
-import EditIcon from '@mui/icons-material/Edit';
-import DeleteIcon from '@mui/icons-material/Delete';
+
 
 
 

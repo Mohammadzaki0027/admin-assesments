@@ -1,4 +1,4 @@
-import React from "react";
+
 import { AppBar, Toolbar, Box, InputBase, IconButton, Avatar, Typography } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import NotificationsIcon from "@mui/icons-material/Notifications";

@@ -1,4 +1,4 @@
-import { Card, CardContent, Typography } from "@mui/material";
+import { Card, CardContent } from "@mui/material";
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
 
 const data = Array.from({ length: 30 }, (_, i) => ({
@@ -6,7 +6,7 @@ const data = Array.from({ length: 30 }, (_, i) => ({
   value: Math.floor(Math.random() * 100),
 }));
 
-export default function SalesChart({month}: { month: string }) {
+export default function SalesChart() {
   return (
     <Card>
       <CardContent>

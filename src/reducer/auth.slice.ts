@@ -2,7 +2,7 @@
 import { createAsyncThunk, createSlice, type PayloadAction } from '@reduxjs/toolkit';
 import axios from 'axios';
 import type { NavigateFunction } from 'react-router-dom';
-import { backend_url, ORIGIN } from '../origin';
+import {  ORIGIN } from '../origin';
 
 interface LoginPayload {
   email: string;
