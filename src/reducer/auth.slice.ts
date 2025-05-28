@@ -2,6 +2,7 @@
 import { createAsyncThunk, createSlice, type PayloadAction } from '@reduxjs/toolkit';
 import axios from 'axios';
 import type { NavigateFunction } from 'react-router-dom';
+import { backend_url, ORIGIN } from '../origin';
 
 interface LoginPayload {
   email: string;
@@ -28,11 +29,14 @@ export const loginUser = createAsyncThunk(
   'auth/loginUser',
   async ({ email, password, navigate }: LoginPayload, { rejectWithValue }) => {
     try {
-      const res = await axios.post('/api/login', { email, password });
-      const token = res.data.token;
 
-      navigate('/dashboard'); 
-      return token;
+      const res:{data:{access_token:string}} = await axios.post(`${ORIGIN}`, { email, password });
+   
+     
+
+localStorage.setItem('acesstoken', res.data.access_token); 
+      navigate('/'); 
+      return  res.data.access_token
     } catch (err: any) {
       return rejectWithValue(err.response?.data?.message || 'Login failed');
     }

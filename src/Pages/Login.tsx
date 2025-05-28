@@ -16,7 +16,10 @@ import { useFormik } from 'formik';
 import type { FormikHelpers } from 'formik';
 import * as Yup from 'yup';
 import type { LoginFormValues } from '../constant/formvalue.types';
-import { useLogin } from '../hooks/loginhooks';
+
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { loginUser } from '../reducer/auth.slice';
 
 const LoginHeader = () => {
   return (
@@ -55,15 +58,15 @@ const initialValues: LoginFormValues = {
 };
 
 const LoginForm: React.FC = () => {
-    const { login, loading, error } = useLogin();
-
+  const navigate = useNavigate();
+const dispatch = useDispatch<any>();
   const handleSubmit =async (
     values: LoginFormValues,
     { setSubmitting }: FormikHelpers<LoginFormValues>
   ) => {
-         const user = await login(values);
+ dispatch(loginUser({ ...values, navigate }));
 
-console.log('User logged in:', user);
+
 
     setSubmitting(false);
   };
