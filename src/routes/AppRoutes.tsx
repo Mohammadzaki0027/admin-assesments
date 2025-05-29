@@ -3,8 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import LoginForm from '../Pages/Login';
 import Dashboard from '../Pages/Dashboard';
 import Article from '../Pages/Article';
-import Layout from '../Pages/Layout';
-import PrivateRoute from './Private';
+
 import DealerShip from '../Pages/DealerShip';
 
 const AppRoutes = () => {

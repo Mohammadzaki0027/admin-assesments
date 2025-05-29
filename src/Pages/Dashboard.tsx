@@ -5,7 +5,6 @@ import StatCard from "../components/StaticsCard";
 import RevenueChart from "../components/RevenueChart";
 import SalesChart from "../components/SalesChart";
 import { useState } from "react";
-import Layout from "./Layout";
 import Sidebar from "../components/SideBar";
 const monthArray = [
   "January",

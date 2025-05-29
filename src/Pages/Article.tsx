@@ -4,7 +4,7 @@ import { Box, Button, Dialog,
   DialogActions,
   TextField,
  
-  IconButton,
+
   Typography, } from "@mui/material";
 
 
@@ -94,11 +94,14 @@ const handleSubmit = () => {
   axios.post(`${backend_url}${addArticle}`, formData)
     .then(res => {
 
-      setOpenModal(false);
-      setTitle("");
-      setDescription("");
-      setImage(null);
-      getDealerShipData();
+if(res.data.message="Article add successfully"){
+
+  setOpenModal(false);
+  setTitle("");
+  setDescription("");
+  setImage(null);
+  getDealerShipData();
+}
     })
     .catch(err => {
       console.error("Error submitting:", err);
