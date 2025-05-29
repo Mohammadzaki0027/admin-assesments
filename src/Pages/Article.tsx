@@ -15,6 +15,7 @@ import React from "react";
 import { addArticle, articleEndpoint, deleteArcticleEndpoint } from "../constant/config";
 import { backend_url } from "../origin";
 import axios from "axios";
+import Sidebar from "../components/SideBar";
 
 
 const   Article = () => {
@@ -111,7 +112,7 @@ if(res.data.message="Article add successfully"){
   return (
     <Box sx={{ display: "flex", minHeight: "100vh", bgcolor: "#f5f5f5",p:6 }}>
 
-
+<Sidebar/>
       <Box sx={{ display: "flex", flexDirection: "column", flexGrow: 1 }}>
 
         <Box
