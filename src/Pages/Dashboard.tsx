@@ -5,6 +5,8 @@ import StatCard from "../components/StaticsCard";
 import RevenueChart from "../components/RevenueChart";
 import SalesChart from "../components/SalesChart";
 import { useState } from "react";
+import Layout from "./Layout";
+import Sidebar from "../components/SideBar";
 const monthArray = [
   "January",
   "February",
@@ -37,7 +39,7 @@ const Dashboard = () => {
   return (
     <Box sx={{ display: "flex", minHeight: "100vh", bgcolor: "#ffffff",p:6 }}>
  
-
+<Sidebar/>
       <Box sx={{ display: "flex", flexDirection: "column", flexGrow: 1 }}>
         {/* Fixed Topbar */}
         <Box

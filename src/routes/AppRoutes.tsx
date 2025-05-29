@@ -14,17 +14,11 @@ const AppRoutes = () => {
       <Route path="/login" element={<LoginForm />} />
 
       {/* Protected Routes with Layout */}
-      <Route
-        element={
-          <PrivateRoute>
-            <Layout />
-          </PrivateRoute>
-        }
-      >
+   
         <Route path='/dealerShip' element={<DealerShip/>}/>
         <Route path="/" element={<Dashboard />} />
         <Route path="/article" element={<Article />} />
-      </Route>
+
     </Routes>
   );
 };

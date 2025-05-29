@@ -19,7 +19,8 @@ import {
 
 
 
-const CustomTable = ({tableData}:any) => {
+const CustomTable = ({tableData,handleDeleteDealerShip}:any) => {
+  
   return (
     <TableContainer component={Paper} sx={{ mt: 2 }}>
       <Table>
@@ -35,7 +36,7 @@ const CustomTable = ({tableData}:any) => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {tableData.map((row:any) => (
+          {tableData?.map((row:any) => (
             <TableRow key={row.id} hover>
               <TableCell padding="checkbox">
                 <Checkbox />
@@ -56,7 +57,7 @@ const CustomTable = ({tableData}:any) => {
     <Button variant="contained" color="success">
   Edit
 </Button>
-            <Button variant="contained" color="error">
+            <Button variant="contained" color="error" onClick={() => handleDeleteDealerShip(row._id)}>
   Delete
 </Button>
                 </Box>
